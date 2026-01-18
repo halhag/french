@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C c:Sourcefrench log --oneline -10)",
+      "Bash(npm create:*)",
+      "Bash(dir /a)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init -p)",
+      "Bash(npm run build:*)",
+      "Bash(pkill:*)"
+    ]
+  }
+}
