@@ -140,6 +140,7 @@ export function Quiz() {
       <ScoreDisplay score={gameState.score} round={gameState.round} />
 
       <QuestionCard
+        key={gameState.currentQuestion.sentence.id}
         question={gameState.currentQuestion}
         onAnswerSelect={handleAnswerSelect}
         selectedAnswer={gameState.selectedAnswer}
