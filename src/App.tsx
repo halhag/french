@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { QuizMode } from './types/quiz';
 import { Quiz } from './components/Quiz';
 import { ModeSelector } from './components/ModeSelector';
+import { ReadingMode } from './components/ReadingMode';
 
 function App() {
   const [selectedMode, setSelectedMode] = useState<QuizMode | null>(null);
@@ -25,11 +26,14 @@ function App() {
             {selectedMode === null && "Choose your learning mode"}
             {selectedMode === 'sentences' && "Test your French comprehension skills"}
             {selectedMode === 'words' && "Build your French vocabulary"}
+            {selectedMode === 'reading' && "Read real French content"}
           </p>
         </header>
 
         {selectedMode === null ? (
           <ModeSelector onModeSelect={handleModeSelect} />
+        ) : selectedMode === 'reading' ? (
+          <ReadingMode onBackToMenu={handleBackToMenu} />
         ) : (
           <Quiz mode={selectedMode} onBackToMenu={handleBackToMenu} />
         )}

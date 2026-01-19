@@ -31,7 +31,16 @@ export interface WordQuestion {
 }
 
 // Mode type
-export type QuizMode = 'sentences' | 'words';
+export type QuizMode = 'sentences' | 'words' | 'reading';
+
+// Reading mode state
+export interface ReadingState {
+  frenchText: string;
+  englishTranslation: string;
+  source: string;
+  isLoading: boolean;
+  error: string | null;
+}
 
 // Union types for polymorphism
 export type QuizQuestionType = QuizQuestion | WordQuestion;
