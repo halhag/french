@@ -1,12 +1,25 @@
 import { useState, useEffect } from 'react';
-import { GameState } from '../types/quiz';
+import { GameState, QuizMode } from '../types/quiz';
 import { sentences } from '../data/sentences';
-import { getRandomQuestion, createQuizQuestion } from '../utils/quizLogic';
+import { words } from '../data/words';
+import {
+  getRandomQuestion,
+  createQuizQuestion,
+  getRandomWord,
+  createWordQuestion,
+  isQuizQuestion
+} from '../utils/quizLogic';
 import { ScoreDisplay } from './ScoreDisplay';
 import { QuestionCard } from './QuestionCard';
 
-export function Quiz() {
+interface QuizProps {
+  mode: QuizMode;
+  onBackToMenu: () => void;
+}
+
+export function Quiz({ mode, onBackToMenu }: QuizProps) {
   const [gameState, setGameState] = useState<GameState>({
+    mode,
     round: 1,
     score: 0,
     currentQuestion: null,
@@ -25,33 +38,60 @@ export function Quiz() {
   }, [gameState.currentQuestion, gameState.isGameComplete]);
 
   const loadNextQuestion = (): void => {
-    const randomSentence = getRandomQuestion(sentences, usedQuestionIds);
+    if (mode === 'sentences') {
+      const randomSentence = getRandomQuestion(sentences, usedQuestionIds);
 
-    if (!randomSentence) {
-      // Fallback: reset used questions if we run out
-      setUsedQuestionIds(new Set());
-      const fallbackSentence = sentences[0];
-      const quizQuestion = createQuizQuestion(fallbackSentence);
+      if (!randomSentence) {
+        // Fallback: reset used questions if we run out
+        setUsedQuestionIds(new Set());
+        const fallbackSentence = sentences[0];
+        const quizQuestion = createQuizQuestion(fallbackSentence);
+        setGameState(prev => ({
+          ...prev,
+          currentQuestion: quizQuestion,
+          selectedAnswer: null,
+          hasAnswered: false
+        }));
+        setUsedQuestionIds(new Set([fallbackSentence.id]));
+        return;
+      }
+
+      const quizQuestion = createQuizQuestion(randomSentence);
       setGameState(prev => ({
         ...prev,
         currentQuestion: quizQuestion,
         selectedAnswer: null,
         hasAnswered: false
       }));
-      setUsedQuestionIds(new Set([fallbackSentence.id]));
-      return;
+      setUsedQuestionIds(prev => new Set([...prev, randomSentence.id]));
+    } else {
+      // Words mode
+      const randomWord = getRandomWord(words, usedQuestionIds);
+
+      if (!randomWord) {
+        // Fallback: reset used questions if we run out
+        setUsedQuestionIds(new Set());
+        const fallbackWord = words[0];
+        const wordQuestion = createWordQuestion(fallbackWord);
+        setGameState(prev => ({
+          ...prev,
+          currentQuestion: wordQuestion,
+          selectedAnswer: null,
+          hasAnswered: false
+        }));
+        setUsedQuestionIds(new Set([fallbackWord.id]));
+        return;
+      }
+
+      const wordQuestion = createWordQuestion(randomWord);
+      setGameState(prev => ({
+        ...prev,
+        currentQuestion: wordQuestion,
+        selectedAnswer: null,
+        hasAnswered: false
+      }));
+      setUsedQuestionIds(prev => new Set([...prev, randomWord.id]));
     }
-
-    const quizQuestion = createQuizQuestion(randomSentence);
-
-    setGameState(prev => ({
-      ...prev,
-      currentQuestion: quizQuestion,
-      selectedAnswer: null,
-      hasAnswered: false
-    }));
-
-    setUsedQuestionIds(prev => new Set([...prev, randomSentence.id]));
   };
 
   const handleAnswerSelect = (answer: string): void => {
@@ -78,6 +118,7 @@ export function Quiz() {
 
   const handleRestart = (): void => {
     setGameState({
+      mode,
       round: 1,
       score: 0,
       currentQuestion: null,
@@ -114,12 +155,20 @@ export function Quiz() {
           <p className="text-xl text-orange-200 mb-8">
             {getScoreMessage(gameState.score)}
           </p>
-          <button
-            onClick={handleRestart}
-            className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg"
-          >
-            Start Over
-          </button>
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={handleRestart}
+              className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg"
+            >
+              Start Over
+            </button>
+            <button
+              onClick={onBackToMenu}
+              className="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg"
+            >
+              Back to Menu
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -140,7 +189,10 @@ export function Quiz() {
       <ScoreDisplay score={gameState.score} round={gameState.round} />
 
       <QuestionCard
-        key={gameState.currentQuestion.sentence.id}
+        mode={mode}
+        key={isQuizQuestion(gameState.currentQuestion)
+          ? gameState.currentQuestion.sentence.id
+          : gameState.currentQuestion.word.id}
         question={gameState.currentQuestion}
         onAnswerSelect={handleAnswerSelect}
         selectedAnswer={gameState.selectedAnswer}
