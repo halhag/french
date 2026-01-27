@@ -20,7 +20,7 @@ function App() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-orange-400 mb-2">
-            French Quiz
+            French
           </h1>
           <p className="text-orange-200 text-lg">
             {selectedMode === null && "Choose your learning mode"}

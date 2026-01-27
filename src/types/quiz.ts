@@ -3,6 +3,7 @@ export interface Sentence {
   french: string;
   correctEnglish: string;
   incorrectOptions: [string, string];
+  incorrectOptionsFrench: [string, string];
   level: 'A1' | 'A2';
 }
 

@@ -10,6 +10,10 @@ export const sentences: Sentence[] = [
       "I like Marie.",
       "Marie is calling me."
     ],
+    incorrectOptionsFrench: [
+      "J'aime Marie.",
+      "Marie m'appelle."
+    ],
     level: 'A1'
   },
   {
@@ -19,6 +23,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I have a black dog.",
       "I want a black cat."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai un chien noir.",
+      "Je veux un chat noir."
     ],
     level: 'A1'
   },
@@ -30,6 +38,10 @@ export const sentences: Sentence[] = [
       "It's cold today.",
       "He looks good today."
     ],
+    incorrectOptionsFrench: [
+      "Il fait froid aujourd'hui.",
+      "Il a l'air bien aujourd'hui."
+    ],
     level: 'A1'
   },
   {
@@ -39,6 +51,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I want fifteen years.",
       "I am fifty years old."
+    ],
+    incorrectOptionsFrench: [
+      "Je veux quinze ans.",
+      "J'ai cinquante ans."
     ],
     level: 'A1'
   },
@@ -50,6 +66,10 @@ export const sentences: Sentence[] = [
       "My brother is big.",
       "My father is tall."
     ],
+    incorrectOptionsFrench: [
+      "Mon frère est gros.",
+      "Mon père est grand."
+    ],
     level: 'A1'
   },
   {
@@ -59,6 +79,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She is very good.",
       "She is very nice."
+    ],
+    incorrectOptionsFrench: [
+      "Elle est très bonne.",
+      "Elle est très gentille."
     ],
     level: 'A1'
   },
@@ -70,6 +94,10 @@ export const sentences: Sentence[] = [
       "I come from school.",
       "I like school."
     ],
+    incorrectOptionsFrench: [
+      "Je viens de l'école.",
+      "J'aime l'école."
+    ],
     level: 'A1'
   },
   {
@@ -79,6 +107,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "Where is the car?",
       "Where is the store?"
+    ],
+    incorrectOptionsFrench: [
+      "Où est la voiture?",
+      "Où est le magasin?"
     ],
     level: 'A1'
   },
@@ -90,6 +122,10 @@ export const sentences: Sentence[] = [
       "I want chocolate.",
       "I eat chocolate."
     ],
+    incorrectOptionsFrench: [
+      "Je veux du chocolat.",
+      "Je mange du chocolat."
+    ],
     level: 'A1'
   },
   {
@@ -99,6 +135,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "How many is it?",
       "What time is it?"
+    ],
+    incorrectOptionsFrench: [
+      "C'est combien en nombre?",
+      "Quelle heure est-il?"
     ],
     level: 'A1'
   },
@@ -110,6 +150,10 @@ export const sentences: Sentence[] = [
       "I don't know.",
       "I'm not listening."
     ],
+    incorrectOptionsFrench: [
+      "Je ne sais pas.",
+      "Je n'écoute pas."
+    ],
     level: 'A1'
   },
   {
@@ -119,6 +163,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "What day is it?",
       "How long is it?"
+    ],
+    incorrectOptionsFrench: [
+      "Quel jour est-il?",
+      "C'est long de combien?"
     ],
     level: 'A1'
   },
@@ -130,6 +178,10 @@ export const sentences: Sentence[] = [
       "My mother lives in Paris.",
       "My mother travels to Paris."
     ],
+    incorrectOptionsFrench: [
+      "Ma mère habite à Paris.",
+      "Ma mère voyage à Paris."
+    ],
     level: 'A1'
   },
   {
@@ -139,6 +191,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "There is a book under the table.",
       "He has a book on the table."
+    ],
+    incorrectOptionsFrench: [
+      "Il y a un livre sous la table.",
+      "Il a un livre sur la table."
     ],
     level: 'A1'
   },
@@ -150,6 +206,10 @@ export const sentences: Sentence[] = [
       "I need a coffee, please.",
       "I like coffee, please."
     ],
+    incorrectOptionsFrench: [
+      "J'ai besoin d'un café, s'il vous plaît.",
+      "J'aime le café, s'il vous plaît."
+    ],
     level: 'A1'
   },
   {
@@ -159,6 +219,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She has two cats.",
       "She wants two dogs."
+    ],
+    incorrectOptionsFrench: [
+      "Elle a deux chats.",
+      "Elle veut deux chiens."
     ],
     level: 'A1'
   },
@@ -170,6 +234,10 @@ export const sentences: Sentence[] = [
       "He is my friend.",
       "This is my brother."
     ],
+    incorrectOptionsFrench: [
+      "Il est mon ami.",
+      "C'est mon frère."
+    ],
     level: 'A1'
   },
   {
@@ -179,6 +247,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I'm going to France.",
       "I love France."
+    ],
+    incorrectOptionsFrench: [
+      "Je vais en France.",
+      "J'aime la France."
     ],
     level: 'A1'
   },
@@ -190,6 +262,10 @@ export const sentences: Sentence[] = [
       "The store is open.",
       "The museum is closed."
     ],
+    incorrectOptionsFrench: [
+      "Le magasin est ouvert.",
+      "Le musée est fermé."
+    ],
     level: 'A1'
   },
   {
@@ -199,6 +275,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We are tired.",
       "We are ready."
+    ],
+    incorrectOptionsFrench: [
+      "Nous sommes fatigués.",
+      "Nous sommes prêts."
     ],
     level: 'A1'
   },
@@ -210,6 +290,10 @@ export const sentences: Sentence[] = [
       "Do you like English?",
       "Are you English?"
     ],
+    incorrectOptionsFrench: [
+      "Tu aimes l'anglais?",
+      "Tu es anglais?"
+    ],
     level: 'A1'
   },
   {
@@ -219,6 +303,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "It's snowing today.",
       "It's sunny today."
+    ],
+    incorrectOptionsFrench: [
+      "Il neige aujourd'hui.",
+      "Il fait soleil aujourd'hui."
     ],
     level: 'A1'
   },
@@ -230,6 +318,10 @@ export const sentences: Sentence[] = [
       "I am eating a potato.",
       "I want an apple."
     ],
+    incorrectOptionsFrench: [
+      "Je mange une pomme de terre.",
+      "Je veux une pomme."
+    ],
     level: 'A1'
   },
   {
@@ -239,6 +331,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "They are at the office.",
       "He is at home."
+    ],
+    incorrectOptionsFrench: [
+      "Ils sont au bureau.",
+      "Il est à la maison."
     ],
     level: 'A1'
   },
@@ -250,6 +346,10 @@ export const sentences: Sentence[] = [
       "That's a bad idea.",
       "That's a new idea."
     ],
+    incorrectOptionsFrench: [
+      "C'est une mauvaise idée.",
+      "C'est une nouvelle idée."
+    ],
     level: 'A1'
   },
   {
@@ -259,6 +359,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "The cat is on the chair.",
       "The dog is under the chair."
+    ],
+    incorrectOptionsFrench: [
+      "Le chat est sur la chaise.",
+      "Le chien est sous la chaise."
     ],
     level: 'A1'
   },
@@ -270,6 +374,10 @@ export const sentences: Sentence[] = [
       "I'm afraid.",
       "I'm hot."
     ],
+    incorrectOptionsFrench: [
+      "J'ai peur.",
+      "J'ai chaud."
+    ],
     level: 'A1'
   },
   {
@@ -279,6 +387,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She is buying a red dress.",
       "She is wearing a blue dress."
+    ],
+    incorrectOptionsFrench: [
+      "Elle achète une robe rouge.",
+      "Elle porte une robe bleue."
     ],
     level: 'A1'
   },
@@ -290,6 +402,10 @@ export const sentences: Sentence[] = [
       "I am hungry.",
       "I am sick."
     ],
+    incorrectOptionsFrench: [
+      "J'ai faim.",
+      "Je suis malade."
+    ],
     level: 'A1'
   },
   {
@@ -299,6 +415,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We play music.",
       "We hear music."
+    ],
+    incorrectOptionsFrench: [
+      "Nous jouons de la musique.",
+      "Nous entendons de la musique."
     ],
     level: 'A1'
   },
@@ -310,6 +430,10 @@ export const sentences: Sentence[] = [
       "He is young.",
       "It is small."
     ],
+    incorrectOptionsFrench: [
+      "Il est jeune.",
+      "C'est petit."
+    ],
     level: 'A1'
   },
   {
@@ -319,6 +443,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "Is it close to here?",
       "Is it long from here?"
+    ],
+    incorrectOptionsFrench: [
+      "C'est près d'ici?",
+      "C'est long d'ici?"
     ],
     level: 'A1'
   },
@@ -330,6 +458,10 @@ export const sentences: Sentence[] = [
       "I take the train.",
       "I drive the bus."
     ],
+    incorrectOptionsFrench: [
+      "Je prends le train.",
+      "Je conduis le bus."
+    ],
     level: 'A1'
   },
   {
@@ -339,6 +471,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She has blue hair.",
       "She has green eyes."
+    ],
+    incorrectOptionsFrench: [
+      "Elle a les cheveux bleus.",
+      "Elle a les yeux verts."
     ],
     level: 'A1'
   },
@@ -350,6 +486,10 @@ export const sentences: Sentence[] = [
       "You are wrong.",
       "You are lucky."
     ],
+    incorrectOptionsFrench: [
+      "Tu as tort.",
+      "Tu as de la chance."
+    ],
     level: 'A1'
   },
   {
@@ -359,6 +499,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "It's cold in summer.",
       "It's hot in winter."
+    ],
+    incorrectOptionsFrench: [
+      "Il fait froid en été.",
+      "Il fait chaud en hiver."
     ],
     level: 'A1'
   },
@@ -370,6 +514,10 @@ export const sentences: Sentence[] = [
       "I drink wine.",
       "I need water."
     ],
+    incorrectOptionsFrench: [
+      "Je bois du vin.",
+      "J'ai besoin d'eau."
+    ],
     level: 'A1'
   },
   {
@@ -379,6 +527,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "The door is closed.",
       "The window is open."
+    ],
+    incorrectOptionsFrench: [
+      "La porte est fermée.",
+      "La fenêtre est ouverte."
     ],
     level: 'A1'
   },
@@ -390,6 +542,10 @@ export const sentences: Sentence[] = [
       "Are you tired?",
       "Are you here?"
     ],
+    incorrectOptionsFrench: [
+      "Vous êtes fatigués?",
+      "Vous êtes ici?"
+    ],
     level: 'A1'
   },
   {
@@ -399,6 +555,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I'm going well, thank you.",
       "I'm good at it, thank you."
+    ],
+    incorrectOptionsFrench: [
+      "Je vais bien en route, merci.",
+      "Je suis doué pour ça, merci."
     ],
     level: 'A1'
   },
@@ -410,6 +570,10 @@ export const sentences: Sentence[] = [
       "It's easy.",
       "It's different."
     ],
+    incorrectOptionsFrench: [
+      "C'est facile.",
+      "C'est différent."
+    ],
     level: 'A1'
   },
   {
@@ -419,6 +583,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "My parents work in Lyon.",
       "My friends live in Lyon."
+    ],
+    incorrectOptionsFrench: [
+      "Mes parents travaillent à Lyon.",
+      "Mes amis habitent à Lyon."
     ],
     level: 'A1'
   },
@@ -430,6 +598,10 @@ export const sentences: Sentence[] = [
       "It rains in winter.",
       "It snows in summer."
     ],
+    incorrectOptionsFrench: [
+      "Il pleut en hiver.",
+      "Il neige en été."
+    ],
     level: 'A1'
   },
   {
@@ -439,6 +611,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "What is your age?",
       "How are you?"
+    ],
+    incorrectOptionsFrench: [
+      "Quel est ton âge?",
+      "Comment vas-tu?"
     ],
     level: 'A1'
   },
@@ -450,6 +626,10 @@ export const sentences: Sentence[] = [
       "I'm calling my phone.",
       "I found my phone."
     ],
+    incorrectOptionsFrench: [
+      "J'appelle mon téléphone.",
+      "J'ai trouvé mon téléphone."
+    ],
     level: 'A1'
   },
   {
@@ -459,6 +639,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "Where is the toilet paper?",
       "Where is the shower?"
+    ],
+    incorrectOptionsFrench: [
+      "Où est le papier toilette?",
+      "Où est la douche?"
     ],
     level: 'A1'
   },
@@ -470,6 +654,10 @@ export const sentences: Sentence[] = [
       "I don't think so.",
       "I'm not sure."
     ],
+    incorrectOptionsFrench: [
+      "Je ne pense pas.",
+      "Je ne suis pas sûr."
+    ],
     level: 'A1'
   },
   {
@@ -479,6 +667,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She learns French.",
       "She likes French."
+    ],
+    incorrectOptionsFrench: [
+      "Elle apprend le français.",
+      "Elle aime le français."
     ],
     level: 'A1'
   },
@@ -490,6 +682,10 @@ export const sentences: Sentence[] = [
       "We are thirsty.",
       "We are full."
     ],
+    incorrectOptionsFrench: [
+      "Nous avons soif.",
+      "Nous sommes rassasiés."
+    ],
     level: 'A1'
   },
   {
@@ -499,6 +695,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "It's very expensive.",
       "It's too cheap."
+    ],
+    incorrectOptionsFrench: [
+      "C'est très cher.",
+      "C'est trop bon marché."
     ],
     level: 'A1'
   },
@@ -511,6 +711,10 @@ export const sentences: Sentence[] = [
       "I want to reserve a table for three people.",
       "I would like to cancel a table for two people."
     ],
+    incorrectOptionsFrench: [
+      "Je veux réserver une table pour trois personnes.",
+      "Je voudrais annuler une table pour deux personnes."
+    ],
     level: 'A2'
   },
   {
@@ -520,6 +724,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "Tomorrow, I'm going to the cinema.",
       "Yesterday, I went to the theater."
+    ],
+    incorrectOptionsFrench: [
+      "Demain, je vais au cinéma.",
+      "Hier, je suis allé au théâtre."
     ],
     level: 'A2'
   },
@@ -531,6 +739,10 @@ export const sentences: Sentence[] = [
       "She goes to bed at seven o'clock.",
       "She leaves at seven o'clock."
     ],
+    incorrectOptionsFrench: [
+      "Elle se couche à sept heures.",
+      "Elle part à sept heures."
+    ],
     level: 'A2'
   },
   {
@@ -540,6 +752,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "That car is faster than this one.",
       "This car is slower than that one."
+    ],
+    incorrectOptionsFrench: [
+      "Cette voiture-là est plus rapide que celle-ci.",
+      "Cette voiture est moins rapide que celle-là."
     ],
     level: 'A2'
   },
@@ -551,6 +767,10 @@ export const sentences: Sentence[] = [
       "We are going to arrive tomorrow morning.",
       "We are going to leave tonight."
     ],
+    incorrectOptionsFrench: [
+      "Nous allons arriver demain matin.",
+      "Nous allons partir ce soir."
+    ],
     level: 'A2'
   },
   {
@@ -560,6 +780,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I found my keys.",
       "I lost my keys."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai trouvé mes clés.",
+      "J'ai perdu mes clés."
     ],
     level: 'A2'
   },
@@ -571,6 +795,10 @@ export const sentences: Sentence[] = [
       "If I have time, I will travel more.",
       "When I had time, I traveled more."
     ],
+    incorrectOptionsFrench: [
+      "Si j'ai le temps, je voyagerai plus.",
+      "Quand j'avais le temps, je voyageais plus."
+    ],
     level: 'A2'
   },
   {
@@ -580,6 +808,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I want to leave now.",
       "I need to stay now."
+    ],
+    incorrectOptionsFrench: [
+      "Je veux partir maintenant.",
+      "Il faut que je reste maintenant."
     ],
     level: 'A2'
   },
@@ -591,6 +823,10 @@ export const sentences: Sentence[] = [
       "She was cooking when I called.",
       "She will eat when I call."
     ],
+    incorrectOptionsFrench: [
+      "Elle était en train de cuisiner quand j'ai appelé.",
+      "Elle mangera quand j'appellerai."
+    ],
     level: 'A2'
   },
   {
@@ -600,6 +836,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We will meet in three years.",
       "We met three months ago."
+    ],
+    incorrectOptionsFrench: [
+      "Nous nous rencontrerons dans trois ans.",
+      "Nous nous sommes rencontrés il y a trois mois."
     ],
     level: 'A2'
   },
@@ -611,6 +851,10 @@ export const sentences: Sentence[] = [
       "I finished working on an important project.",
       "I will work on an important project."
     ],
+    incorrectOptionsFrench: [
+      "J'ai fini de travailler sur un projet important.",
+      "Je travaillerai sur un projet important."
+    ],
     level: 'A2'
   },
   {
@@ -620,6 +864,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "Can you wait for me, please?",
       "Would you tell me, please?"
+    ],
+    incorrectOptionsFrench: [
+      "Pouvez-vous m'attendre, s'il vous plaît?",
+      "Pourriez-vous me dire, s'il vous plaît?"
     ],
     level: 'A2'
   },
@@ -631,6 +879,10 @@ export const sentences: Sentence[] = [
       "I went to bed early this morning.",
       "I woke up late this morning."
     ],
+    incorrectOptionsFrench: [
+      "Je me suis couché tôt ce matin.",
+      "Je me suis levé tard ce matin."
+    ],
     level: 'A2'
   },
   {
@@ -640,6 +892,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He just arrived.",
       "He is about to leave."
+    ],
+    incorrectOptionsFrench: [
+      "Il vient d'arriver.",
+      "Il est sur le point de partir."
     ],
     level: 'A2'
   },
@@ -651,6 +907,10 @@ export const sentences: Sentence[] = [
       "Before you slept, I prepared dinner.",
       "While you were sleeping, I ate dinner."
     ],
+    incorrectOptionsFrench: [
+      "Avant que tu dormes, j'ai préparé le dîner.",
+      "Pendant que tu dormais, j'ai mangé le dîner."
+    ],
     level: 'A2'
   },
   {
@@ -660,6 +920,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I think it's going to snow.",
       "I hope it's going to rain."
+    ],
+    incorrectOptionsFrench: [
+      "Je pense qu'il va neiger.",
+      "J'espère qu'il va pleuvoir."
     ],
     level: 'A2'
   },
@@ -671,6 +935,10 @@ export const sentences: Sentence[] = [
       "She dyed her hair.",
       "She washed her hair."
     ],
+    incorrectOptionsFrench: [
+      "Elle s'est teint les cheveux.",
+      "Elle s'est lavé les cheveux."
+    ],
     level: 'A2'
   },
   {
@@ -680,6 +948,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We must start this work before Friday.",
       "We can finish this work after Friday."
+    ],
+    incorrectOptionsFrench: [
+      "Nous devons commencer ce travail avant vendredi.",
+      "Nous pouvons finir ce travail après vendredi."
     ],
     level: 'A2'
   },
@@ -691,6 +963,10 @@ export const sentences: Sentence[] = [
       "It's been a short time since we saw each other.",
       "It's time for us to see each other."
     ],
+    incorrectOptionsFrench: [
+      "Ça fait peu de temps qu'on ne s'est pas vus.",
+      "C'est le moment de se voir."
+    ],
     level: 'A2'
   },
   {
@@ -700,6 +976,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I already visited Italy one day.",
       "I would like to visit Spain someday."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai déjà visité l'Italie un jour.",
+      "J'aimerais bien visiter l'Espagne un jour."
     ],
     level: 'A2'
   },
@@ -711,6 +991,10 @@ export const sentences: Sentence[] = [
       "He already replied to me.",
       "He never replied to me."
     ],
+    incorrectOptionsFrench: [
+      "Il m'a déjà répondu.",
+      "Il ne m'a jamais répondu."
+    ],
     level: 'A2'
   },
   {
@@ -720,6 +1004,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "Before I arrive, I'll call you.",
       "After I arrive, I'll visit you."
+    ],
+    incorrectOptionsFrench: [
+      "Avant d'arriver, je t'appelle.",
+      "Après mon arrivée, je te rendrai visite."
     ],
     level: 'A2'
   },
@@ -731,6 +1019,10 @@ export const sentences: Sentence[] = [
       "She feels tired.",
       "She looks happy."
     ],
+    incorrectOptionsFrench: [
+      "Elle se sent fatiguée.",
+      "Elle a l'air heureuse."
+    ],
     level: 'A2'
   },
   {
@@ -740,6 +1032,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I like the climate.",
       "I'm living in this climate."
+    ],
+    incorrectOptionsFrench: [
+      "J'aime le climat.",
+      "Je vis dans ce climat."
     ],
     level: 'A2'
   },
@@ -751,6 +1047,10 @@ export const sentences: Sentence[] = [
       "It's snowing.",
       "He's taking the train."
     ],
+    incorrectOptionsFrench: [
+      "Il neige.",
+      "Il prend le train."
+    ],
     level: 'A2'
   },
   {
@@ -760,6 +1060,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We had a terrible evening.",
       "We had a great morning."
+    ],
+    incorrectOptionsFrench: [
+      "Nous avons passé une soirée terrible.",
+      "Nous avons passé une excellente matinée."
     ],
     level: 'A2'
   },
@@ -771,6 +1075,10 @@ export const sentences: Sentence[] = [
       "I can't close this window.",
       "I can't find this window."
     ],
+    incorrectOptionsFrench: [
+      "Je n'arrive pas à fermer cette fenêtre.",
+      "Je n'arrive pas à trouver cette fenêtre."
+    ],
     level: 'A2'
   },
   {
@@ -780,6 +1088,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She just left for work.",
       "She's coming back to work."
+    ],
+    incorrectOptionsFrench: [
+      "Elle vient de partir au travail.",
+      "Elle revient au travail."
     ],
     level: 'A2'
   },
@@ -791,6 +1103,10 @@ export const sentences: Sentence[] = [
       "You should work a bit.",
       "You must rest a lot."
     ],
+    incorrectOptionsFrench: [
+      "Tu devrais travailler un peu.",
+      "Tu dois te reposer beaucoup."
+    ],
     level: 'A2'
   },
   {
@@ -800,6 +1116,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He was cold last night.",
       "He got hot last night."
+    ],
+    incorrectOptionsFrench: [
+      "Il avait froid hier soir.",
+      "Il a eu chaud hier soir."
     ],
     level: 'A2'
   },
@@ -811,6 +1131,10 @@ export const sentences: Sentence[] = [
       "I'm happy to be late.",
       "I'm sorry to be early."
     ],
+    incorrectOptionsFrench: [
+      "Je suis content d'être en retard.",
+      "Je suis désolé d'être en avance."
+    ],
     level: 'A2'
   },
   {
@@ -820,6 +1144,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We're very bored here.",
       "We're having fun over there."
+    ],
+    incorrectOptionsFrench: [
+      "Nous nous ennuyons beaucoup ici.",
+      "Nous nous amusons beaucoup là-bas."
     ],
     level: 'A2'
   },
@@ -831,6 +1159,10 @@ export const sentences: Sentence[] = [
       "She's trying to sleep.",
       "She's really sleeping."
     ],
+    incorrectOptionsFrench: [
+      "Elle essaie de dormir.",
+      "Elle dort vraiment."
+    ],
     level: 'A2'
   },
   {
@@ -840,6 +1172,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I know where he went.",
       "I wonder when he left."
+    ],
+    incorrectOptionsFrench: [
+      "Je sais où il est allé.",
+      "Je me demande quand il est parti."
     ],
     level: 'A2'
   },
@@ -851,6 +1187,10 @@ export const sentences: Sentence[] = [
       "Nothing strange happened.",
       "Something normal happened."
     ],
+    incorrectOptionsFrench: [
+      "Rien d'étrange ne s'est passé.",
+      "Quelque chose de normal s'est passé."
+    ],
     level: 'A2'
   },
   {
@@ -860,6 +1200,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "Do you like this song?",
       "Do you know this song?"
+    ],
+    incorrectOptionsFrench: [
+      "Tu aimes cette chanson?",
+      "Tu connais cette chanson?"
     ],
     level: 'A2'
   },
@@ -871,6 +1215,10 @@ export const sentences: Sentence[] = [
       "I've always eaten sushi.",
       "I've never made sushi."
     ],
+    incorrectOptionsFrench: [
+      "J'ai toujours mangé du sushi.",
+      "Je n'ai jamais fait de sushi."
+    ],
     level: 'A2'
   },
   {
@@ -880,6 +1228,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She worries about her children.",
       "She plays with her children."
+    ],
+    incorrectOptionsFrench: [
+      "Elle s'inquiète pour ses enfants.",
+      "Elle joue avec ses enfants."
     ],
     level: 'A2'
   },
@@ -891,6 +1243,10 @@ export const sentences: Sentence[] = [
       "We caught the train.",
       "We completely missed the train."
     ],
+    incorrectOptionsFrench: [
+      "Nous avons eu le train.",
+      "Nous avons complètement raté le train."
+    ],
     level: 'A2'
   },
   {
@@ -900,6 +1256,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He understood immediately.",
       "He took time to explain."
+    ],
+    incorrectOptionsFrench: [
+      "Il a compris immédiatement.",
+      "Il a pris le temps d'expliquer."
     ],
     level: 'A2'
   },
@@ -911,6 +1271,10 @@ export const sentences: Sentence[] = [
       "I took the right path.",
       "I found the wrong path."
     ],
+    incorrectOptionsFrench: [
+      "J'ai pris le bon chemin.",
+      "J'ai trouvé le mauvais chemin."
+    ],
     level: 'A2'
   },
   {
@@ -920,6 +1284,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She doesn't want to go on vacation.",
       "She just came back from vacation."
+    ],
+    incorrectOptionsFrench: [
+      "Elle ne veut pas partir en vacances.",
+      "Elle vient de revenir de vacances."
     ],
     level: 'A2'
   },
@@ -931,6 +1299,10 @@ export const sentences: Sentence[] = [
       "You'd better slow down.",
       "You should take your time."
     ],
+    incorrectOptionsFrench: [
+      "Tu ferais mieux de ralentir.",
+      "Tu devrais prendre ton temps."
+    ],
     level: 'A2'
   },
   {
@@ -940,6 +1312,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I forgot to thank you.",
       "I need to ask you."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai oublié de te remercier.",
+      "J'ai besoin de te demander."
     ],
     level: 'A2'
   },
@@ -951,6 +1327,10 @@ export const sentences: Sentence[] = [
       "She just lost her driver's license.",
       "She's studying for her driver's license."
     ],
+    incorrectOptionsFrench: [
+      "Elle vient de perdre son permis de conduire.",
+      "Elle prépare son permis de conduire."
+    ],
     level: 'A2'
   },
   {
@@ -960,6 +1340,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We hear each other very well.",
       "We understand each other sometimes."
+    ],
+    incorrectOptionsFrench: [
+      "Nous nous entendons très bien au niveau sonore.",
+      "Nous nous comprenons parfois."
     ],
     level: 'A2'
   },
@@ -971,6 +1355,10 @@ export const sentences: Sentence[] = [
       "He can't stop crying.",
       "He doesn't want to laugh."
     ],
+    incorrectOptionsFrench: [
+      "Il ne peut pas s'arrêter de pleurer.",
+      "Il ne veut pas rire."
+    ],
     level: 'A2'
   },
   {
@@ -980,6 +1368,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I made a mistake.",
       "I forgot my mistake."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai fait une erreur.",
+      "J'ai oublié mon erreur."
     ],
     level: 'A2'
   },
@@ -991,6 +1383,10 @@ export const sentences: Sentence[] = [
       "She concentrates easily.",
       "She has trouble relaxing."
     ],
+    incorrectOptionsFrench: [
+      "Elle se concentre facilement.",
+      "Elle a du mal à se détendre."
+    ],
     level: 'A2'
   },
   {
@@ -1000,6 +1396,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We're waiting for you.",
       "We're thinking about you."
+    ],
+    incorrectOptionsFrench: [
+      "Nous t'attendons.",
+      "Nous pensons à toi."
     ],
     level: 'A2'
   },
@@ -1012,6 +1412,10 @@ export const sentences: Sentence[] = [
       "I'm about to finish my homework.",
       "I started my homework."
     ],
+    incorrectOptionsFrench: [
+      "Je suis sur le point de finir mes devoirs.",
+      "J'ai commencé mes devoirs."
+    ],
     level: 'A2'
   },
   {
@@ -1021,6 +1425,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "It will rain when I go out.",
       "It's raining when I'm going out."
+    ],
+    incorrectOptionsFrench: [
+      "Il pleuvra quand je sortirai.",
+      "Il pleut quand je sors."
     ],
     level: 'A2'
   },
@@ -1032,6 +1440,10 @@ export const sentences: Sentence[] = [
       "I ate nothing this evening.",
       "I ate everything this morning."
     ],
+    incorrectOptionsFrench: [
+      "Je n'ai rien mangé ce soir.",
+      "J'ai tout mangé ce matin."
+    ],
     level: 'A2'
   },
   {
@@ -1041,6 +1453,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She told me she came yesterday.",
       "She tells me she will come tomorrow."
+    ],
+    incorrectOptionsFrench: [
+      "Elle m'a dit qu'elle est venue hier.",
+      "Elle me dit qu'elle viendra demain."
     ],
     level: 'A2'
   },
@@ -1052,6 +1468,10 @@ export const sentences: Sentence[] = [
       "I broke my arm skiing.",
       "I hurt my leg while running."
     ],
+    incorrectOptionsFrench: [
+      "Je me suis cassé le bras en skiant.",
+      "Je me suis fait mal à la jambe en courant."
+    ],
     level: 'A2'
   },
   {
@@ -1061,6 +1481,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We're about to move to this city.",
       "We lived in this city."
+    ],
+    incorrectOptionsFrench: [
+      "Nous sommes sur le point d'emménager dans cette ville.",
+      "Nous habitions dans cette ville."
     ],
     level: 'A2'
   },
@@ -1072,6 +1496,10 @@ export const sentences: Sentence[] = [
       "It will take three hours to get there.",
       "It takes three days to get there."
     ],
+    incorrectOptionsFrench: [
+      "Il faudra trois heures pour y arriver.",
+      "Il faut trois jours pour y arriver."
+    ],
     level: 'A2'
   },
   {
@@ -1081,6 +1509,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I'd better stay here now.",
       "I want to go home now."
+    ],
+    incorrectOptionsFrench: [
+      "Je ferais mieux de rester ici maintenant.",
+      "Je veux rentrer maintenant."
     ],
     level: 'A2'
   },
@@ -1092,6 +1524,10 @@ export const sentences: Sentence[] = [
       "She learned Spanish.",
       "She's teaching Spanish."
     ],
+    incorrectOptionsFrench: [
+      "Elle a appris l'espagnol.",
+      "Elle enseigne l'espagnol."
+    ],
     level: 'A2'
   },
   {
@@ -1101,6 +1537,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I lived here for two months.",
       "I will live here for two years."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai habité ici pendant deux mois.",
+      "J'habiterai ici pendant deux ans."
     ],
     level: 'A2'
   },
@@ -1112,6 +1552,10 @@ export const sentences: Sentence[] = [
       "I don't hear the noise.",
       "I love the noise."
     ],
+    incorrectOptionsFrench: [
+      "Je n'entends pas le bruit.",
+      "J'adore le bruit."
+    ],
     level: 'A2'
   },
   {
@@ -1121,6 +1565,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He likes to wake up early.",
       "He's used to going to bed late."
+    ],
+    incorrectOptionsFrench: [
+      "Il aime se lever tôt.",
+      "Il a l'habitude de se coucher tard."
     ],
     level: 'A2'
   },
@@ -1132,6 +1580,10 @@ export const sentences: Sentence[] = [
       "I have more money.",
       "I never had money."
     ],
+    incorrectOptionsFrench: [
+      "J'ai plus d'argent.",
+      "Je n'ai jamais eu d'argent."
+    ],
     level: 'A2'
   },
   {
@@ -1141,6 +1593,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She seems to be healthy.",
       "She is definitely sick."
+    ],
+    incorrectOptionsFrench: [
+      "Elle a l'air d'être en bonne santé.",
+      "Elle est vraiment malade."
     ],
     level: 'A2'
   },
@@ -1152,6 +1608,10 @@ export const sentences: Sentence[] = [
       "I regret studying more.",
       "I'm happy I didn't study more."
     ],
+    incorrectOptionsFrench: [
+      "Je regrette d'avoir étudié plus.",
+      "Je suis content de ne pas avoir étudié plus."
+    ],
     level: 'A2'
   },
   {
@@ -1161,6 +1621,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "You should come later.",
       "You must leave earlier."
+    ],
+    incorrectOptionsFrench: [
+      "Il faudrait que tu viennes plus tard.",
+      "Tu dois partir plus tôt."
     ],
     level: 'A2'
   },
@@ -1172,6 +1636,10 @@ export const sentences: Sentence[] = [
       "I found my way in the city.",
       "I got lost in the country."
     ],
+    incorrectOptionsFrench: [
+      "J'ai trouvé mon chemin en ville.",
+      "Je me suis perdu à la campagne."
+    ],
     level: 'A2'
   },
   {
@@ -1181,6 +1649,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She decided to start smoking.",
       "She decided to quit drinking."
+    ],
+    incorrectOptionsFrench: [
+      "Elle a décidé de commencer à fumer.",
+      "Elle a décidé d'arrêter de boire."
     ],
     level: 'A2'
   },
@@ -1192,6 +1664,10 @@ export const sentences: Sentence[] = [
       "We agreed last night.",
       "We met last night."
     ],
+    incorrectOptionsFrench: [
+      "Nous étions d'accord hier soir.",
+      "Nous nous sommes rencontrés hier soir."
+    ],
     level: 'A2'
   },
   {
@@ -1201,6 +1677,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I had time to do it.",
       "I didn't want to do it."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai eu le temps de le faire.",
+      "Je n'ai pas voulu le faire."
     ],
     level: 'A2'
   },
@@ -1212,6 +1692,10 @@ export const sentences: Sentence[] = [
       "It's worse to wait until tomorrow.",
       "It's better to leave today."
     ],
+    incorrectOptionsFrench: [
+      "C'est pire d'attendre demain.",
+      "Il vaut mieux partir aujourd'hui."
+    ],
     level: 'A2'
   },
   {
@@ -1221,6 +1705,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I stayed awake during the movie.",
       "I fell asleep after the movie."
+    ],
+    incorrectOptionsFrench: [
+      "Je suis resté éveillé pendant le film.",
+      "Je me suis endormi après le film."
     ],
     level: 'A2'
   },
@@ -1232,6 +1720,10 @@ export const sentences: Sentence[] = [
       "She knows how to drive.",
       "She's trying to teach driving."
     ],
+    incorrectOptionsFrench: [
+      "Elle sait conduire.",
+      "Elle essaie d'enseigner la conduite."
+    ],
     level: 'A2'
   },
   {
@@ -1241,6 +1733,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We caught our flight.",
       "We booked our flight."
+    ],
+    incorrectOptionsFrench: [
+      "Nous avons eu notre vol.",
+      "Nous avons réservé notre vol."
     ],
     level: 'A2'
   },
@@ -1252,6 +1748,10 @@ export const sentences: Sentence[] = [
       "I just came back from vacation in July.",
       "I plan to work in July."
     ],
+    incorrectOptionsFrench: [
+      "Je viens de revenir de vacances en juillet.",
+      "Je compte travailler en juillet."
+    ],
     level: 'A2'
   },
   {
@@ -1261,6 +1761,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He really doesn't see me.",
       "He's pretending to see me."
+    ],
+    incorrectOptionsFrench: [
+      "Il ne me voit vraiment pas.",
+      "Il fait semblant de me voir."
     ],
     level: 'A2'
   },
@@ -1272,6 +1776,10 @@ export const sentences: Sentence[] = [
       "I know it's true.",
       "I wonder if it's false."
     ],
+    incorrectOptionsFrench: [
+      "Je sais que c'est vrai.",
+      "Je me demande si c'est faux."
+    ],
     level: 'A2'
   },
   {
@@ -1281,6 +1789,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She walked in the street.",
       "She fell in the street."
+    ],
+    incorrectOptionsFrench: [
+      "Elle a marché dans la rue.",
+      "Elle est tombée dans la rue."
     ],
     level: 'A2'
   },
@@ -1292,6 +1804,10 @@ export const sentences: Sentence[] = [
       "I'd like you to speak to me.",
       "I'd like you to ignore me."
     ],
+    incorrectOptionsFrench: [
+      "Je voudrais que tu me parles.",
+      "Je voudrais que tu m'ignores."
+    ],
     level: 'A2'
   },
   {
@@ -1301,6 +1817,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He ended up rejecting my proposal.",
       "He immediately accepted my proposal."
+    ],
+    incorrectOptionsFrench: [
+      "Il a fini par refuser ma proposition.",
+      "Il a immédiatement accepté ma proposition."
     ],
     level: 'A2'
   },
@@ -1312,6 +1832,10 @@ export const sentences: Sentence[] = [
       "I cut someone's hair.",
       "I grew my hair out."
     ],
+    incorrectOptionsFrench: [
+      "J'ai coupé les cheveux de quelqu'un.",
+      "J'ai laissé pousser mes cheveux."
+    ],
     level: 'A2'
   },
   {
@@ -1321,6 +1845,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We were unlucky.",
       "We had fun."
+    ],
+    incorrectOptionsFrench: [
+      "Nous n'avons pas eu de chance.",
+      "Nous nous sommes amusés."
     ],
     level: 'A2'
   },
@@ -1332,6 +1860,10 @@ export const sentences: Sentence[] = [
       "She was happy when she saw the dog.",
       "She got scared when she heard the dog."
     ],
+    incorrectOptionsFrench: [
+      "Elle était contente en voyant le chien.",
+      "Elle a eu peur en entendant le chien."
+    ],
     level: 'A2'
   },
   {
@@ -1341,6 +1873,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I understand what he said.",
       "I can't hear what he said."
+    ],
+    incorrectOptionsFrench: [
+      "Je comprends ce qu'il a dit.",
+      "Je n'arrive pas à entendre ce qu'il a dit."
     ],
     level: 'A2'
   },
@@ -1352,6 +1888,10 @@ export const sentences: Sentence[] = [
       "You shouldn't ask.",
       "You just have to answer."
     ],
+    incorrectOptionsFrench: [
+      "Tu ne devrais pas demander.",
+      "Il suffit de répondre."
+    ],
     level: 'A2'
   },
   {
@@ -1361,6 +1901,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I forgot his name.",
       "I remembered his address."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai oublié son nom.",
+      "Je me suis souvenu de son adresse."
     ],
     level: 'A2'
   },
@@ -1372,6 +1916,10 @@ export const sentences: Sentence[] = [
       "She failed to get the job.",
       "She refused the job."
     ],
+    incorrectOptionsFrench: [
+      "Elle n'a pas réussi à obtenir le poste.",
+      "Elle a refusé le poste."
+    ],
     level: 'A2'
   },
   {
@@ -1381,6 +1929,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We decided to leave earlier.",
       "We were supposed to arrive earlier."
+    ],
+    incorrectOptionsFrench: [
+      "Nous avons décidé de partir plus tôt.",
+      "Nous devions arriver plus tôt."
     ],
     level: 'A2'
   },
@@ -1392,6 +1944,10 @@ export const sentences: Sentence[] = [
       "I feel worse now.",
       "I felt better before."
     ],
+    incorrectOptionsFrench: [
+      "Je me sens moins bien maintenant.",
+      "Je me sentais mieux avant."
+    ],
     level: 'A2'
   },
   {
@@ -1401,6 +1957,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "There are two weeks left.",
       "There's only one day left."
+    ],
+    incorrectOptionsFrench: [
+      "Il reste deux semaines.",
+      "Il ne reste plus qu'un jour."
     ],
     level: 'A2'
   },
@@ -1412,6 +1972,10 @@ export const sentences: Sentence[] = [
       "She borrowed my book.",
       "She sold me her book."
     ],
+    incorrectOptionsFrench: [
+      "Elle m'a emprunté mon livre.",
+      "Elle m'a vendu son livre."
+    ],
     level: 'A2'
   },
   {
@@ -1421,6 +1985,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I got used to going to bed late.",
       "I like waking up early."
+    ],
+    incorrectOptionsFrench: [
+      "Je me suis habitué à me coucher tard.",
+      "J'aime me lever tôt."
     ],
     level: 'A2'
   },
@@ -1432,6 +2000,10 @@ export const sentences: Sentence[] = [
       "He looks excited.",
       "He looks confused."
     ],
+    incorrectOptionsFrench: [
+      "Il a l'air excité.",
+      "Il a l'air confus."
+    ],
     level: 'A2'
   },
   {
@@ -1441,6 +2013,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I already decided.",
       "I never decide."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai déjà décidé.",
+      "Je ne décide jamais."
     ],
     level: 'A2'
   },
@@ -1452,6 +2028,10 @@ export const sentences: Sentence[] = [
       "She fell down the stairs.",
       "She almost fell up the stairs."
     ],
+    incorrectOptionsFrench: [
+      "Elle est tombée dans les escaliers.",
+      "Elle a failli tomber en montant les escaliers."
+    ],
     level: 'A2'
   },
   {
@@ -1461,6 +2041,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We repaired the car ourselves.",
       "We sold the car."
+    ],
+    incorrectOptionsFrench: [
+      "Nous avons réparé la voiture nous-mêmes.",
+      "Nous avons vendu la voiture."
     ],
     level: 'A2'
   },
@@ -1472,6 +2056,10 @@ export const sentences: Sentence[] = [
       "I want to tell him the truth.",
       "I already told him the truth."
     ],
+    incorrectOptionsFrench: [
+      "Je veux lui dire la vérité.",
+      "Je lui ai déjà dit la vérité."
+    ],
     level: 'A2'
   },
   {
@@ -1481,6 +2069,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He agreed to help me.",
       "He forgot to help me."
+    ],
+    incorrectOptionsFrench: [
+      "Il a accepté de m'aider.",
+      "Il a oublié de m'aider."
     ],
     level: 'A2'
   },
@@ -1492,6 +2084,10 @@ export const sentences: Sentence[] = [
       "I made a mistake.",
       "I ignored my mistake."
     ],
+    incorrectOptionsFrench: [
+      "J'ai fait une erreur.",
+      "J'ai ignoré mon erreur."
+    ],
     level: 'A2'
   },
   {
@@ -1501,6 +2097,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She just moved.",
       "She doesn't want to move."
+    ],
+    incorrectOptionsFrench: [
+      "Elle vient de déménager.",
+      "Elle ne veut pas déménager."
     ],
     level: 'A2'
   },
@@ -1512,6 +2112,10 @@ export const sentences: Sentence[] = [
       "We stayed in touch.",
       "We just met."
     ],
+    incorrectOptionsFrench: [
+      "Nous sommes restés en contact.",
+      "Nous venons de nous rencontrer."
+    ],
     level: 'A2'
   },
   {
@@ -1521,6 +2125,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I found my wallet.",
       "I lost my keys."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai trouvé mon portefeuille.",
+      "J'ai perdu mes clés."
     ],
     level: 'A2'
   },
@@ -1532,6 +2140,10 @@ export const sentences: Sentence[] = [
       "He just got fired.",
       "He's about to get promoted."
     ],
+    incorrectOptionsFrench: [
+      "Il vient d'être licencié.",
+      "Il est sur le point d'être promu."
+    ],
     level: 'A2'
   },
   {
@@ -1541,6 +2153,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I want to be there at eight o'clock.",
       "I'm supposed to leave at eight o'clock."
+    ],
+    incorrectOptionsFrench: [
+      "Je veux être là à huit heures.",
+      "Je suis censé partir à huit heures."
     ],
     level: 'A2'
   },
@@ -1552,6 +2168,10 @@ export const sentences: Sentence[] = [
       "She's right to think that.",
       "She's afraid to think that."
     ],
+    incorrectOptionsFrench: [
+      "Elle a raison de penser ça.",
+      "Elle a peur de penser ça."
+    ],
     level: 'A2'
   },
   {
@@ -1561,6 +2181,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We're about to get married.",
       "We just got divorced."
+    ],
+    incorrectOptionsFrench: [
+      "Nous sommes sur le point de nous marier.",
+      "Nous venons de divorcer."
     ],
     level: 'A2'
   },
@@ -1572,6 +2196,10 @@ export const sentences: Sentence[] = [
       "I broke my ankle.",
       "I twisted my wrist."
     ],
+    incorrectOptionsFrench: [
+      "Je me suis cassé la cheville.",
+      "Je me suis tordu le poignet."
+    ],
     level: 'A2'
   },
   {
@@ -1581,6 +2209,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He looks very happy.",
       "He doesn't feel happy."
+    ],
+    incorrectOptionsFrench: [
+      "Il a l'air très content.",
+      "Il ne se sent pas content."
     ],
     level: 'A2'
   },
@@ -1592,6 +2224,10 @@ export const sentences: Sentence[] = [
       "I stopped understanding.",
       "I completely understand."
     ],
+    incorrectOptionsFrench: [
+      "J'ai arrêté de comprendre.",
+      "Je comprends complètement."
+    ],
     level: 'A2'
   },
   {
@@ -1601,6 +2237,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She looks angry.",
       "She feels surprised."
+    ],
+    incorrectOptionsFrench: [
+      "Elle a l'air en colère.",
+      "Elle se sent surprise."
     ],
     level: 'A2'
   },
@@ -1612,6 +2252,10 @@ export const sentences: Sentence[] = [
       "I quit my yoga class.",
       "I signed up for a dance class."
     ],
+    incorrectOptionsFrench: [
+      "J'ai quitté mon cours de yoga.",
+      "Je me suis inscrit à un cours de danse."
+    ],
     level: 'A2'
   },
   {
@@ -1621,6 +2265,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "It started raining.",
       "It continues to rain."
+    ],
+    incorrectOptionsFrench: [
+      "Il a commencé à pleuvoir.",
+      "Il continue de pleuvoir."
     ],
     level: 'A2'
   },
@@ -1632,6 +2280,10 @@ export const sentences: Sentence[] = [
       "We caused an accident.",
       "We had an accident."
     ],
+    incorrectOptionsFrench: [
+      "Nous avons causé un accident.",
+      "Nous avons eu un accident."
+    ],
     level: 'A2'
   },
   {
@@ -1641,6 +2293,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I hurt my neck.",
       "I healed my back."
+    ],
+    incorrectOptionsFrench: [
+      "Je me suis fait mal au cou.",
+      "J'ai guéri mon dos."
     ],
     level: 'A2'
   },
@@ -1652,6 +2308,10 @@ export const sentences: Sentence[] = [
       "She loves her job.",
       "She's starting her job."
     ],
+    incorrectOptionsFrench: [
+      "Elle adore son travail.",
+      "Elle commence son travail."
+    ],
     level: 'A2'
   },
   {
@@ -1661,6 +2321,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I finished reading an interesting book.",
       "I'm writing an interesting book."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai fini de lire un livre intéressant.",
+      "J'écris un livre intéressant."
     ],
     level: 'A2'
   },
@@ -1672,6 +2336,10 @@ export const sentences: Sentence[] = [
       "It suddenly stopped raining.",
       "It suddenly started snowing."
     ],
+    incorrectOptionsFrench: [
+      "Il a soudainement cessé de pleuvoir.",
+      "Il s'est mis à neiger soudainement."
+    ],
     level: 'A2'
   },
   {
@@ -1681,6 +2349,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I couldn't help crying.",
       "I managed not to laugh."
+    ],
+    incorrectOptionsFrench: [
+      "Je n'ai pas pu m'empêcher de pleurer.",
+      "J'ai réussi à ne pas rire."
     ],
     level: 'A2'
   },
@@ -1692,6 +2364,10 @@ export const sentences: Sentence[] = [
       "She has trouble waking up.",
       "She falls asleep easily."
     ],
+    incorrectOptionsFrench: [
+      "Elle a du mal à se réveiller.",
+      "Elle s'endort facilement."
+    ],
     level: 'A2'
   },
   {
@@ -1701,6 +2377,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We plan to return in June.",
       "We plan to leave in July."
+    ],
+    incorrectOptionsFrench: [
+      "Nous avons prévu de revenir en juin.",
+      "Nous avons prévu de partir en juillet."
     ],
     level: 'A2'
   },
@@ -1712,6 +2392,10 @@ export const sentences: Sentence[] = [
       "I dialed the right number.",
       "I forgot the number."
     ],
+    incorrectOptionsFrench: [
+      "J'ai composé le bon numéro.",
+      "J'ai oublié le numéro."
+    ],
     level: 'A2'
   },
   {
@@ -1721,6 +2405,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He looks relaxed.",
       "He feels rushed."
+    ],
+    incorrectOptionsFrench: [
+      "Il a l'air détendu.",
+      "Il se sent pressé."
     ],
     level: 'A2'
   },
@@ -1732,6 +2420,10 @@ export const sentences: Sentence[] = [
       "I know what she thinks.",
       "I wonder what she said."
     ],
+    incorrectOptionsFrench: [
+      "Je sais ce qu'elle pense.",
+      "Je me demande ce qu'elle a dit."
+    ],
     level: 'A2'
   },
   {
@@ -1741,6 +2433,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She calmed down.",
       "She got sad."
+    ],
+    incorrectOptionsFrench: [
+      "Elle s'est calmée.",
+      "Elle est devenue triste."
     ],
     level: 'A2'
   },
@@ -1752,6 +2448,10 @@ export const sentences: Sentence[] = [
       "We were bored at the party.",
       "We left the party."
     ],
+    incorrectOptionsFrench: [
+      "Nous nous sommes ennuyés à la fête.",
+      "Nous avons quitté la fête."
+    ],
     level: 'A2'
   },
   {
@@ -1761,6 +2461,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I managed to convince him.",
       "I didn't try to convince him."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai réussi à le convaincre.",
+      "Je n'ai pas essayé de le convaincre."
     ],
     level: 'A2'
   },
@@ -1772,6 +2476,10 @@ export const sentences: Sentence[] = [
       "He's happy all the time.",
       "He never complains."
     ],
+    incorrectOptionsFrench: [
+      "Il est content tout le temps.",
+      "Il ne se plaint jamais."
+    ],
     level: 'A2'
   },
   {
@@ -1781,6 +2489,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I cut myself while cooking.",
       "I burned the food while cooking."
+    ],
+    incorrectOptionsFrench: [
+      "Je me suis coupé en cuisinant.",
+      "J'ai brûlé la nourriture en cuisinant."
     ],
     level: 'A2'
   },
@@ -1792,6 +2504,10 @@ export const sentences: Sentence[] = [
       "She looks calm.",
       "She looks excited."
     ],
+    incorrectOptionsFrench: [
+      "Elle a l'air calme.",
+      "Elle a l'air excitée."
+    ],
     level: 'A2'
   },
   {
@@ -1801,6 +2517,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We decided to leave.",
       "We forgot to stay."
+    ],
+    incorrectOptionsFrench: [
+      "Nous avons décidé de partir.",
+      "Nous avons oublié de rester."
     ],
     level: 'A2'
   },
@@ -1812,6 +2532,10 @@ export const sentences: Sentence[] = [
       "I hurt someone else falling.",
       "I hurt myself running."
     ],
+    incorrectOptionsFrench: [
+      "J'ai blessé quelqu'un d'autre en tombant.",
+      "Je me suis fait mal en courant."
+    ],
     level: 'A2'
   },
   {
@@ -1821,6 +2545,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "He refused to come.",
       "He promised to leave."
+    ],
+    incorrectOptionsFrench: [
+      "Il a refusé de venir.",
+      "Il a promis de partir."
     ],
     level: 'A2'
   },
@@ -1832,6 +2560,10 @@ export const sentences: Sentence[] = [
       "I woke up early.",
       "I went to bed late."
     ],
+    incorrectOptionsFrench: [
+      "Je me suis réveillé tôt.",
+      "Je me suis couché tard."
+    ],
     level: 'A2'
   },
   {
@@ -1841,6 +2573,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She needs work.",
       "She wants rest."
+    ],
+    incorrectOptionsFrench: [
+      "Elle a besoin de travail.",
+      "Elle veut du repos."
     ],
     level: 'A2'
   },
@@ -1852,6 +2588,10 @@ export const sentences: Sentence[] = [
       "We met at the restaurant.",
       "We lost each other at the café."
     ],
+    incorrectOptionsFrench: [
+      "Nous nous sommes retrouvés au restaurant.",
+      "Nous nous sommes perdus au café."
+    ],
     level: 'A2'
   },
   {
@@ -1861,6 +2601,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I cut myself closing the box.",
       "I burned myself opening the box."
+    ],
+    incorrectOptionsFrench: [
+      "Je me suis coupé en fermant la boîte.",
+      "Je me suis brûlé en ouvrant la boîte."
     ],
     level: 'A2'
   },
@@ -1872,6 +2616,10 @@ export const sentences: Sentence[] = [
       "He looks satisfied.",
       "He looks confused."
     ],
+    incorrectOptionsFrench: [
+      "Il a l'air satisfait.",
+      "Il a l'air confus."
+    ],
     level: 'A2'
   },
   {
@@ -1881,6 +2629,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I'm going to try to text him.",
       "I tried to call him."
+    ],
+    incorrectOptionsFrench: [
+      "Je vais essayer de lui envoyer un message.",
+      "J'ai essayé de l'appeler."
     ],
     level: 'A2'
   },
@@ -1892,6 +2644,10 @@ export const sentences: Sentence[] = [
       "She praised the service.",
       "She complained about the food."
     ],
+    incorrectOptionsFrench: [
+      "Elle a fait l'éloge du service.",
+      "Elle s'est plainte de la nourriture."
+    ],
     level: 'A2'
   },
   {
@@ -1901,6 +2657,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We took the right road.",
       "We found the wrong road."
+    ],
+    incorrectOptionsFrench: [
+      "Nous avons pris la bonne route.",
+      "Nous avons trouvé la mauvaise route."
     ],
     level: 'A2'
   },
@@ -1912,6 +2672,10 @@ export const sentences: Sentence[] = [
       "I apologized for leaving early.",
       "I explained my lateness."
     ],
+    incorrectOptionsFrench: [
+      "Je me suis excusé d'être parti tôt.",
+      "J'ai expliqué mon retard."
+    ],
     level: 'A2'
   },
   {
@@ -1921,6 +2685,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "It stopped raining.",
       "It started raining."
+    ],
+    incorrectOptionsFrench: [
+      "Il a cessé de pleuvoir.",
+      "Il a commencé à pleuvoir."
     ],
     level: 'A2'
   },
@@ -1932,6 +2700,10 @@ export const sentences: Sentence[] = [
       "I was bored last night.",
       "I had a great time this morning."
     ],
+    incorrectOptionsFrench: [
+      "Je me suis ennuyé hier soir.",
+      "Je me suis bien amusé ce matin."
+    ],
     level: 'A2'
   },
   {
@@ -1941,6 +2713,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "She answered my question.",
       "She avoided asking my question."
+    ],
+    incorrectOptionsFrench: [
+      "Elle a répondu à ma question.",
+      "Elle a évité de poser ma question."
     ],
     level: 'A2'
   },
@@ -1952,6 +2728,10 @@ export const sentences: Sentence[] = [
       "We held the meeting tomorrow.",
       "We canceled the meeting tomorrow."
     ],
+    incorrectOptionsFrench: [
+      "Nous avons tenu la réunion demain.",
+      "Nous avons annulé la réunion de demain."
+    ],
     level: 'A2'
   },
   {
@@ -1961,6 +2741,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I went to the station by bus.",
       "I came from the station by taxi."
+    ],
+    incorrectOptionsFrench: [
+      "Je me suis rendu à la gare en bus.",
+      "Je suis venu de la gare en taxi."
     ],
     level: 'A2'
   },
@@ -1972,6 +2756,10 @@ export const sentences: Sentence[] = [
       "He refused to admit the truth.",
       "He finally hid the truth."
     ],
+    incorrectOptionsFrench: [
+      "Il a refusé d'avouer la vérité.",
+      "Il a fini par cacher la vérité."
+    ],
     level: 'A2'
   },
   {
@@ -1981,6 +2769,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "I took my time going home.",
       "I forgot to go home."
+    ],
+    incorrectOptionsFrench: [
+      "J'ai pris mon temps pour rentrer.",
+      "J'ai oublié de rentrer."
     ],
     level: 'A2'
   },
@@ -1992,6 +2784,10 @@ export const sentences: Sentence[] = [
       "She forgave me.",
       "She got mad at him."
     ],
+    incorrectOptionsFrench: [
+      "Elle m'a pardonné.",
+      "Elle s'est fâchée contre lui."
+    ],
     level: 'A2'
   },
   {
@@ -2001,6 +2797,10 @@ export const sentences: Sentence[] = [
     incorrectOptions: [
       "We don't want to see you again.",
       "We can't wait to meet you."
+    ],
+    incorrectOptionsFrench: [
+      "Nous ne voulons pas vous revoir.",
+      "Nous avons hâte de vous rencontrer."
     ],
     level: 'A2'
   }
