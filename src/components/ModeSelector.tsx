@@ -12,7 +12,7 @@ export function ModeSelector({ onModeSelect }: ModeSelectorProps) {
           Choose Your Challenge
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Sentences Mode Card */}
           <button
             onClick={() => onModeSelect('sentences')}
@@ -45,7 +45,7 @@ export function ModeSelector({ onModeSelect }: ModeSelectorProps) {
               Build vocabulary with individual words and phrases
             </p>
             <div className="text-sm text-orange-300">
-              <div>• 500 words</div>
+              <div>• 1000 words</div>
               <div>• Focused vocabulary</div>
               <div>• Quick practice</div>
             </div>
@@ -67,6 +67,25 @@ export function ModeSelector({ onModeSelect }: ModeSelectorProps) {
               <div>• Live from Le Monde</div>
               <div>• French + English</div>
               <div>• Real-world content</div>
+            </div>
+          </button>
+
+          {/* Match Mode Card */}
+          <button
+            onClick={() => onModeSelect('match')}
+            className="group bg-gray-700 border-2 border-orange-500 rounded-lg p-6 hover:bg-gray-600 hover:border-orange-400 transition-all duration-200 active:scale-95"
+          >
+            <div className="text-4xl mb-4">🔗</div>
+            <h3 className="text-2xl font-bold text-orange-300 mb-2">
+              Match
+            </h3>
+            <p className="text-orange-200 mb-4">
+              Match French words to their English translations
+            </p>
+            <div className="text-sm text-orange-300">
+              <div>• 3 lives</div>
+              <div>• Endless play</div>
+              <div>• High score table</div>
             </div>
           </button>
         </div>
