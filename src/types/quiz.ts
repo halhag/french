@@ -38,7 +38,8 @@ export type QuizMode = 'sentences' | 'words' | 'reading';
 export interface ReadingState {
   frenchText: string;
   englishTranslation: string;
-  source: string;
+  pubDate: string;
+  isLive: boolean;
   isLoading: boolean;
   error: string | null;
 }
