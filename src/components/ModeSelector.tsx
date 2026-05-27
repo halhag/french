@@ -88,6 +88,25 @@ export function ModeSelector({ onModeSelect }: ModeSelectorProps) {
               <div>• High score table</div>
             </div>
           </button>
+
+          {/* Conjugation Mode Card */}
+          <button
+            onClick={() => onModeSelect('conjugation')}
+            className="group bg-gray-700 border-2 border-orange-500 rounded-lg p-6 hover:bg-gray-600 hover:border-orange-400 transition-all duration-200 active:scale-95 md:col-span-2"
+          >
+            <div className="text-4xl mb-4">✏️</div>
+            <h3 className="text-2xl font-bold text-orange-300 mb-2">
+              Conjugation
+            </h3>
+            <p className="text-orange-200 mb-4">
+              Type French verb conjugations from English prompts
+            </p>
+            <div className="text-sm text-orange-300">
+              <div>• 10 verbs, present &amp; past</div>
+              <div>• Type your answer</div>
+              <div>• 10 questions per round</div>
+            </div>
+          </button>
         </div>
       </div>
     </div>

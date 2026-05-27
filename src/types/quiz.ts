@@ -32,7 +32,7 @@ export interface WordQuestion {
 }
 
 // Mode type
-export type QuizMode = 'sentences' | 'words' | 'reading' | 'match';
+export type QuizMode = 'sentences' | 'words' | 'reading' | 'match' | 'conjugation';
 
 // Reading mode state
 export interface ReadingState {

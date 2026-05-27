@@ -4,6 +4,7 @@ import { Quiz } from './components/Quiz';
 import { ModeSelector } from './components/ModeSelector';
 import { ReadingMode } from './components/ReadingMode';
 import { MatchMode } from './components/MatchMode';
+import { ConjugationMode } from './components/ConjugationMode';
 
 function App() {
   const [selectedMode, setSelectedMode] = useState<QuizMode | null>(null);
@@ -29,6 +30,7 @@ function App() {
             {selectedMode === 'words' && "Build your French vocabulary"}
             {selectedMode === 'reading' && "Read real French content"}
             {selectedMode === 'match' && "Match French words to English"}
+            {selectedMode === 'conjugation' && "Conjugate French verbs from English"}
           </p>
         </header>
 
@@ -38,6 +40,8 @@ function App() {
           <ReadingMode onBackToMenu={handleBackToMenu} />
         ) : selectedMode === 'match' ? (
           <MatchMode onBackToMenu={handleBackToMenu} />
+        ) : selectedMode === 'conjugation' ? (
+          <ConjugationMode onBackToMenu={handleBackToMenu} />
         ) : (
           <Quiz mode={selectedMode} onBackToMenu={handleBackToMenu} />
         )}
