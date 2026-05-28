@@ -7,6 +7,11 @@ interface ConjugationModeProps {
 
 const ROUNDS = 10;
 
+// Normalise for comparison: lowercase, trim, strip all apostrophe variants
+function normalise(s: string): string {
+  return s.trim().toLowerCase().replace(/['‘’ʼ`´]/g, '');
+}
+
 function stripAccents(s: string): string {
   return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
@@ -75,8 +80,8 @@ export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
 
   function handleSubmit() {
     if (!currentItem || hasSubmitted) return;
-    const input = userInput.trim().toLowerCase();
-    const answer = currentItem.french.toLowerCase();
+    const input = normalise(userInput);
+    const answer = normalise(currentItem.french);
     let result: AnswerResult;
     if (input === answer) {
       result = 'correct';
