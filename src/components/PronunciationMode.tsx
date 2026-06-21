@@ -331,6 +331,12 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
       </div>
 
       <p className="text-center text-orange-400/50 text-xs mt-3">Press 🔊 to hear the correct pronunciation at any time</p>
+
+      <div className="mt-3 p-3 bg-yellow-900/20 border border-yellow-700/40 rounded-lg text-center">
+        <p className="text-yellow-500/70 text-xs">
+          🧪 Experimental — speech recognition depends on your browser and network settings and may not always work.
+        </p>
+      </div>
     </div>
   );
 }
