@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import { QuizMode } from './types/quiz';
-import { Quiz } from './components/Quiz';
-import { ModeSelector } from './components/ModeSelector';
-import { ReadingMode } from './components/ReadingMode';
-import { MatchMode } from './components/MatchMode';
-import { ConjugationMode } from './components/ConjugationMode';
-import { TimeWordMode } from './components/TimeWordMode';
+import { useState } from "react";
+import { QuizMode } from "./types/quiz";
+import { Quiz } from "./components/Quiz";
+import { ModeSelector } from "./components/ModeSelector";
+import { ReadingMode } from "./components/ReadingMode";
+import { MatchMode } from "./components/MatchMode";
+import { ConjugationMode } from "./components/ConjugationMode";
+import { TimeWordMode } from "./components/TimeWordMode";
+import { PronunciationMode } from "./components/PronunciationMode";
 
 function App() {
   const [selectedMode, setSelectedMode] = useState<QuizMode | null>(null);
@@ -27,25 +28,28 @@ function App() {
           </h1>
           <p className="text-orange-200 text-lg">
             {selectedMode === null && "Choose your learning mode"}
-            {selectedMode === 'sentences' && "Test your French comprehension skills"}
-            {selectedMode === 'words' && "Build your French vocabulary"}
-            {selectedMode === 'reading' && "Read real French content"}
-            {selectedMode === 'match' && "Match French words to English"}
-            {selectedMode === 'conjugation' && "Conjugate French verbs from English"}
-            {selectedMode === 'timewords' && "Practice time words and phrases"}
+            {selectedMode === "sentences" && "Test your French comprehension skills"}
+            {selectedMode === "words" && "Build your French vocabulary"}
+            {selectedMode === "reading" && "Read real French content"}
+            {selectedMode === "match" && "Match French words to English"}
+            {selectedMode === "conjugation" && "Conjugate French verbs from English"}
+            {selectedMode === "timewords" && "Practice time words and phrases"}
+            {selectedMode === "pronunciation" && "Say it out loud — practice French pronunciation"}
           </p>
         </header>
 
         {selectedMode === null ? (
           <ModeSelector onModeSelect={handleModeSelect} />
-        ) : selectedMode === 'reading' ? (
+        ) : selectedMode === "reading" ? (
           <ReadingMode onBackToMenu={handleBackToMenu} />
-        ) : selectedMode === 'match' ? (
+        ) : selectedMode === "match" ? (
           <MatchMode onBackToMenu={handleBackToMenu} />
-        ) : selectedMode === 'conjugation' ? (
+        ) : selectedMode === "conjugation" ? (
           <ConjugationMode onBackToMenu={handleBackToMenu} />
-        ) : selectedMode === 'timewords' ? (
+        ) : selectedMode === "timewords" ? (
           <TimeWordMode onBackToMenu={handleBackToMenu} />
+        ) : selectedMode === "pronunciation" ? (
+          <PronunciationMode onBackToMenu={handleBackToMenu} />
         ) : (
           <Quiz mode={selectedMode} onBackToMenu={handleBackToMenu} />
         )}
