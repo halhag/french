@@ -7,6 +7,7 @@ import { MatchMode } from "./components/MatchMode";
 import { ConjugationMode } from "./components/ConjugationMode";
 import { TimeWordMode } from "./components/TimeWordMode";
 import { PronunciationMode } from "./components/PronunciationMode";
+import { VocabMode } from "./components/VocabMode";
 
 function App() {
   const [selectedMode, setSelectedMode] = useState<QuizMode | null>(null);
@@ -29,7 +30,7 @@ function App() {
           <p className="text-orange-200 text-lg">
             {selectedMode === null && "Choose your learning mode"}
             {selectedMode === "sentences" && "Test your French comprehension skills"}
-            {selectedMode === "words" && "Build your French vocabulary"}
+            {selectedMode === "words" && "Type the French translation from English"}
             {selectedMode === "reading" && "Read real French content"}
             {selectedMode === "match" && "Match French words to English"}
             {selectedMode === "conjugation" && "Conjugate French verbs from English"}
@@ -50,6 +51,8 @@ function App() {
           <TimeWordMode onBackToMenu={handleBackToMenu} />
         ) : selectedMode === "pronunciation" ? (
           <PronunciationMode onBackToMenu={handleBackToMenu} />
+        ) : selectedMode === "words" ? (
+          <VocabMode onBackToMenu={handleBackToMenu} />
         ) : (
           <Quiz mode={selectedMode} onBackToMenu={handleBackToMenu} />
         )}

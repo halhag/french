@@ -42,12 +42,12 @@ export function ModeSelector({ onModeSelect }: ModeSelectorProps) {
               Words
             </h3>
             <p className="text-orange-200 mb-4">
-              Build vocabulary with individual words and phrases
+              Type the French translation from English prompts
             </p>
             <div className="text-sm text-orange-300">
-              <div>• 1000 words</div>
-              <div>• Focused vocabulary</div>
-              <div>• Quick practice</div>
+              <div>• 90 words &amp; phrases</div>
+              <div>• Nouns, verbs, adjectives</div>
+              <div>• 10 questions per round</div>
             </div>
           </button>
 
