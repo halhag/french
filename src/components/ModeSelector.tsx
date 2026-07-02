@@ -45,7 +45,7 @@ export function ModeSelector({ onModeSelect }: ModeSelectorProps) {
               Type the French translation from English prompts
             </p>
             <div className="text-sm text-orange-300">
-              <div>• 90 words &amp; phrases</div>
+              <div>• 125 words &amp; phrases</div>
               <div>• Nouns, verbs, adjectives</div>
               <div>• 10 questions per round</div>
             </div>
