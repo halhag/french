@@ -14,6 +14,7 @@ interface MatchPair {
 
 const LIVES_START = 3;
 const PAIR_COUNT = 7;
+const GAME_SECONDS = 60;
 const LS_KEY = 'french-match-highscores';
 
 const MATCH_POOL = words.filter(w =>
@@ -62,6 +63,12 @@ function shuffleIndices(n: number): number[] {
   return arr;
 }
 
+function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+
 export function MatchMode({ onBackToMenu }: MatchModeProps) {
   const [pairs, setPairs] = useState<MatchPair[]>([]);
   const [englishOrder, setEnglishOrder] = useState<number[]>([]);
@@ -71,6 +78,7 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
   const [score, setScore] = useState(0);
   const [usedIds, setUsedIds] = useState<Set<number>>(new Set());
   const [isGameOver, setIsGameOver] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(GAME_SECONDS);
   const [topScores, setTopScores] = useState<number[]>(loadTopScores);
 
   const loadNewPairs = useCallback((currentUsedIds: Set<number>) => {
@@ -85,6 +93,26 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
     loadNewPairs(new Set());
   }, [loadNewPairs]);
 
+  // Countdown: one interval that runs while the game is live.
+  useEffect(() => {
+    if (isGameOver) return;
+    const id = setInterval(() => {
+      setTimeLeft(t => {
+        if (t <= 1) { clearInterval(id); return 0; }
+        return t - 1;
+      });
+    }, 1000);
+    return () => clearInterval(id);
+  }, [isGameOver]);
+
+  // End the game when the clock runs out.
+  useEffect(() => {
+    if (timeLeft === 0 && !isGameOver) {
+      setTopScores(saveScore(score));
+      setIsGameOver(true);
+    }
+  }, [timeLeft, isGameOver, score]);
+
   const handleFrenchClick = (id: number) => {
     if (wrongIds) return; // ignore clicks during flash
     const pair = pairs.find(p => p.id === id);
@@ -92,30 +120,30 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
     setSelectedFrenchId(prev => prev === id ? null : id);
   };
 
-  const handleEnglishClick = (pairIndex: number) => {
+  const handleEnglishClick = (englishId: number) => {
     if (wrongIds) return; // ignore clicks during flash
     if (selectedFrenchId === null) return;
-    const clickedPair = pairs[pairIndex];
-    if (clickedPair.matched) return;
+    const clickedPair = pairs.find(p => p.id === englishId);
+    if (!clickedPair || clickedPair.matched) return;
 
     if (clickedPair.id === selectedFrenchId) {
       // Correct match
       const newPairs = pairs.map(p =>
         p.id === selectedFrenchId ? { ...p, matched: true } : p
       );
-      const newScore = score + 1;
       setPairs(newPairs);
-      setScore(newScore);
+      setScore(s => s + 1);
       setSelectedFrenchId(null);
 
       const newUsedIds = new Set([...usedIds, selectedFrenchId]);
       setUsedIds(newUsedIds);
 
+      // Whole board cleared -> refill all 7 at once (keeps matches unguessable).
       if (newPairs.every(p => p.matched)) {
         setTimeout(() => loadNewPairs(newUsedIds), 400);
       }
     } else {
-      // Wrong match — flash both red
+      // Wrong match — flash both red and lose a life.
       setWrongIds({ frenchId: selectedFrenchId, englishId: clickedPair.id });
       const newLives = lives - 1;
       setLives(newLives);
@@ -123,8 +151,7 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
         setWrongIds(null);
         setSelectedFrenchId(null);
         if (newLives === 0) {
-          const updated = saveScore(score);
-          setTopScores(updated);
+          setTopScores(saveScore(score));
           setIsGameOver(true);
         }
       }, 700);
@@ -136,13 +163,13 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
     setUsedIds(newUsedIds);
     setScore(0);
     setLives(LIVES_START);
+    setTimeLeft(GAME_SECONDS);
     setIsGameOver(false);
     loadNewPairs(newUsedIds);
   };
 
   const frenchBtnClass = (pair: MatchPair) => {
     const base = 'w-full text-left px-4 py-3 rounded-lg border-2 font-medium transition-all duration-150 ';
-    if (pair.matched) return base + 'invisible';
     if (wrongIds?.frenchId === pair.id) return base + 'bg-red-800 border-red-500 text-red-100';
     if (selectedFrenchId === pair.id) return base + 'bg-orange-700 border-orange-400 text-white';
     return base + 'bg-gray-700 border-gray-600 text-orange-100 hover:border-orange-500 hover:bg-gray-600';
@@ -150,16 +177,15 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
 
   const englishBtnClass = (pair: MatchPair) => {
     const base = 'w-full text-left px-4 py-3 rounded-lg border-2 font-medium transition-all duration-150 ';
-    if (pair.matched) return base + 'invisible';
     if (wrongIds?.englishId === pair.id) return base + 'bg-red-800 border-red-500 text-red-100';
-    if (selectedFrenchId !== null && !pair.matched) return base + 'bg-gray-700 border-gray-500 text-blue-100 hover:border-blue-400 hover:bg-gray-600 cursor-pointer';
+    if (selectedFrenchId !== null) return base + 'bg-gray-700 border-gray-500 text-blue-100 hover:border-blue-400 hover:bg-gray-600 cursor-pointer';
     return base + 'bg-gray-700 border-gray-600 text-blue-100';
   };
 
   if (isGameOver) {
     return (
       <div className="bg-gray-800 border-2 border-orange-600 rounded-xl shadow-2xl p-8 max-w-md mx-auto text-center">
-        <h2 className="text-3xl font-bold text-orange-400 mb-2">Game Over</h2>
+        <h2 className="text-3xl font-bold text-orange-400 mb-2">Time's Up!</h2>
         <p className="text-orange-200 text-xl mb-6">Score: <span className="font-bold text-white">{score}</span></p>
 
         <div className="mb-6">
@@ -187,6 +213,9 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
     );
   }
 
+  const frenchPairs = pairs.filter(p => !p.matched);
+  const englishPairs = englishOrder.map(i => pairs[i]).filter(p => p && !p.matched);
+
   return (
     <div className="bg-gray-800 border-2 border-orange-600 rounded-xl shadow-2xl p-6 md:p-8">
       {/* Header */}
@@ -197,12 +226,15 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
           ))}
         </div>
         <div className="text-center">
-          <span className="text-orange-200 text-sm">Score</span>
-          <div className="text-3xl font-bold text-orange-400">{score}</div>
+          <span className="text-orange-200 text-sm">Time</span>
+          <div className={`text-3xl font-bold tabular-nums ${timeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-orange-400'}`}>
+            {formatTime(timeLeft)}
+          </div>
         </div>
         <div className="text-right">
-          <span className="text-gray-400 text-sm">Best</span>
-          <div className="text-lg font-semibold text-gray-300">{topScores[0] ?? 0}</div>
+          <span className="text-orange-200 text-sm">Score</span>
+          <div className="text-3xl font-bold text-orange-400">{score}</div>
+          <span className="text-gray-500 text-xs">Best {topScores[0] ?? 0}</span>
         </div>
       </div>
 
@@ -210,12 +242,12 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
       <div className="grid grid-cols-2 gap-3">
         {/* French column */}
         <div className="space-y-2">
-          {pairs.map(pair => (
+          {frenchPairs.map(pair => (
             <button
               key={pair.id}
               onClick={() => handleFrenchClick(pair.id)}
               className={frenchBtnClass(pair)}
-              disabled={pair.matched || !!wrongIds}
+              disabled={!!wrongIds}
             >
               {pair.french}
             </button>
@@ -224,19 +256,16 @@ export function MatchMode({ onBackToMenu }: MatchModeProps) {
 
         {/* English column (shuffled order) */}
         <div className="space-y-2">
-          {englishOrder.map(pairIdx => {
-            const pair = pairs[pairIdx];
-            return (
-              <button
-                key={pair.id}
-                onClick={() => handleEnglishClick(pairIdx)}
-                className={englishBtnClass(pair)}
-                disabled={pair.matched || !!wrongIds || selectedFrenchId === null}
-              >
-                {pair.english}
-              </button>
-            );
-          })}
+          {englishPairs.map(pair => (
+            <button
+              key={pair.id}
+              onClick={() => handleEnglishClick(pair.id)}
+              className={englishBtnClass(pair)}
+              disabled={!!wrongIds || selectedFrenchId === null}
+            >
+              {pair.english}
+            </button>
+          ))}
         </div>
       </div>
 
