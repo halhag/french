@@ -150,7 +150,10 @@ export function ReadingMode({ onBackToMenu }: ReadingModeProps) {
       <div className="bg-gray-800 border-2 border-orange-600 rounded-xl shadow-2xl p-8">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-400 mx-auto mb-4"></div>
-          <p className="text-orange-200">Loading French content...</p>
+          <p className="text-orange-200 mb-6">Loading French content...</p>
+          <button onClick={onBackToMenu} className="px-6 py-2 bg-gray-600 hover:bg-gray-500 text-white rounded-lg font-medium transition-colors">
+            Back to Menu
+          </button>
         </div>
       </div>
     );

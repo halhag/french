@@ -178,7 +178,11 @@ export function Quiz({ mode, onBackToMenu }: QuizProps) {
     return (
       <div className="max-w-2xl mx-auto">
         <div className="bg-gray-800 border-2 border-orange-600 rounded-xl shadow-2xl p-8 text-center">
-          <p className="text-orange-200">Loading...</p>
+          <p className="text-orange-200 mb-6">Loading...</p>
+          <button onClick={onBackToMenu}
+            className="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg">
+            Menu
+          </button>
         </div>
       </div>
     );
@@ -199,16 +203,22 @@ export function Quiz({ mode, onBackToMenu }: QuizProps) {
         hasAnswered={gameState.hasAnswered}
       />
 
-      {gameState.hasAnswered && (
-        <div className="mt-6 text-center">
+      <div className="mt-6 flex justify-center gap-4">
+        {gameState.hasAnswered && (
           <button
             onClick={handleNext}
             className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg"
           >
             {gameState.round === 10 ? 'See Results' : 'Next'}
           </button>
-        </div>
-      )}
+        )}
+        <button
+          onClick={onBackToMenu}
+          className="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg"
+        >
+          Menu
+        </button>
+      </div>
     </div>
   );
 }
