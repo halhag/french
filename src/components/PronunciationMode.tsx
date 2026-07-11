@@ -43,13 +43,25 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
   const [usedIds, setUsedIds] = useState<Set<number>>(new Set());
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState("");
+  const [interimTranscript, setInterimTranscript] = useState("");
   const [hasResult, setHasResult] = useState(false);
   const [answerResult, setAnswerResult] = useState<AnswerResult>("wrong");
   const [listenError, setListenError] = useState<string | null>(null);
+  const [showSelfScore, setShowSelfScore] = useState(false);
   const [isGameComplete, setIsGameComplete] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const recognitionRef = useRef<any>(null);
   const frVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
+  const timeoutRef = useRef<number | null>(null);
+
+  const LISTEN_TIMEOUT_MS = 8000;
+
+  function clearListenTimeout() {
+    if (timeoutRef.current !== null) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  }
 
   function speak(text: string) {
     window.speechSynthesis.cancel();
@@ -73,6 +85,8 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
     return () => {
       window.speechSynthesis.removeEventListener("voiceschanged", loadFrVoice);
       window.speechSynthesis.cancel();
+      clearListenTimeout();
+      recognitionRef.current?.abort();
     };
   }, []);
 
@@ -82,32 +96,70 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
     setCurrentItem(next);
     setUsedIds(new Set([...ids, next.id]));
     setTranscript("");
+    setInterimTranscript("");
     setHasResult(false);
     setAnswerResult("wrong");
     setListenError(null);
+    setShowSelfScore(false);
     setIsListening(false);
   }
 
   const startListening = useCallback(() => {
     if (!SR || !currentItem) return;
     recognitionRef.current?.abort();
+    clearListenTimeout();
     setListenError(null);
+    setInterimTranscript("");
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const recognition: any = new SR();
     recognition.lang = "fr-FR";
     recognition.continuous = false;
-    recognition.interimResults = false;
+    recognition.interimResults = true; // live transcription for perceived speed
     recognition.maxAlternatives = 5;
     recognitionRef.current = recognition;
 
-    recognition.onstart = () => setIsListening(true);
+    let gotResult = false;
+
+    // Safety net: if the API stalls (flaky network), never let the UI hang on
+    // "Listening…". Reset the clock on each burst of speech, cut it off if silent.
+    function armTimeout() {
+      clearListenTimeout();
+      timeoutRef.current = window.setTimeout(() => {
+        setListenError("That took too long — check your connection and try again, or score yourself below.");
+        try { recognition.abort(); } catch { /* already stopped */ }
+      }, LISTEN_TIMEOUT_MS);
+    }
+
+    recognition.onstart = () => {
+      setIsListening(true);
+      armTimeout();
+    };
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onresult = (event: any) => {
-      const count: number = event.results[0].length;
+      let interim = "";
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      let final: any = null;
+      for (let i = 0; i < event.results.length; i++) {
+        const res = event.results[i];
+        if (res.isFinal) final = res;
+        else interim += res[0].transcript;
+      }
+
+      if (interim && !final) {
+        setInterimTranscript(interim);
+        armTimeout(); // still hearing speech — extend the deadline
+        return;
+      }
+
+      if (!final) return;
+      gotResult = true;
+      clearListenTimeout();
+
+      const count: number = final.length;
       const alternatives: string[] = Array.from({ length: count }, (_, i) =>
-        event.results[0][i].transcript as string
+        final[i].transcript as string
       );
 
       let bestResult: AnswerResult = "wrong";
@@ -119,6 +171,7 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
         if (r === "accent_only" && bestResult === "wrong") { bestResult = "accent_only"; bestTranscript = alt; }
       }
 
+      setInterimTranscript("");
       setTranscript(bestTranscript);
       setAnswerResult(bestResult);
       setHasResult(true);
@@ -130,16 +183,10 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
       if (bestResult !== "wrong") setScore(s => s + 1);
     };
 
-    let gotResult = false;
-
-    const originalOnResult = recognition.onresult;
-    recognition.onresult = (event: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
-      gotResult = true;
-      originalOnResult(event);
-    };
-
     recognition.onerror = (event: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
+      clearListenTimeout();
       setIsListening(false);
+      setInterimTranscript("");
       const code: string = event.error ?? "";
       if (code === "not-allowed") {
         setListenError("Microphone access denied — please allow it in browser settings.");
@@ -147,22 +194,34 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
         setListenError("Speech recognition had a connection blip — try again or score yourself below.");
       } else if (code === "no-speech") {
         setListenError("No speech detected. Speak clearly and try again.");
+      } else if (code === "aborted") {
+        // Deliberate stop/timeout — any message is already set; stay quiet otherwise.
       } else {
         setListenError(`Error (${code || "unknown"}) — try again.`);
       }
     };
 
     recognition.onend = () => {
+      clearListenTimeout();
       setIsListening(false);
+      setInterimTranscript("");
       if (!gotResult) {
-        setListenError(prev => prev ?? "Didn't catch that — try again.");
+        setListenError(prev => prev ?? "Didn't catch that — try again, or score yourself below.");
       }
     };
 
-    recognition.start();
+    try {
+      recognition.start();
+    } catch {
+      // start() throws InvalidStateError if a session is somehow still active.
+      clearListenTimeout();
+      setIsListening(false);
+      setListenError("Couldn't start the microphone — try again, or score yourself below.");
+    }
   }, [currentItem]);
 
   function handleNext() {
+    clearListenTimeout();
     recognitionRef.current?.abort();
     if (round === ROUNDS) {
       setIsGameComplete(true);
@@ -173,6 +232,7 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
   }
 
   function handleRestart() {
+    clearListenTimeout();
     recognitionRef.current?.abort();
     window.speechSynthesis.cancel();
     setRound(1);
@@ -250,19 +310,24 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
           </div>
         )}
 
-        {/* Listening indicator */}
+        {/* Listening indicator + live transcription */}
         {isListening && (
-          <div className="mb-6 flex items-center justify-center gap-3">
-            <span className="inline-block w-3 h-3 bg-red-500 rounded-full animate-pulse" />
-            <span className="text-orange-200 font-medium">Listening...</span>
+          <div className="mb-6 flex flex-col items-center justify-center gap-2">
+            <div className="flex items-center gap-3">
+              <span className="inline-block w-3 h-3 bg-red-500 rounded-full animate-pulse" />
+              <span className="text-orange-200 font-medium">Listening...</span>
+            </div>
+            {interimTranscript && (
+              <p className="text-orange-300 italic text-lg min-h-[1.75rem]">"{interimTranscript}"</p>
+            )}
           </div>
         )}
 
-        {/* Error message + self-assessment fallback */}
-        {listenError && !hasResult && (
+        {/* Self-assessment panel — shown on error, or any time the user opts in */}
+        {(listenError || showSelfScore) && !hasResult && (
           <div className="mb-6 p-4 rounded-lg border-2 bg-yellow-900/40 border-yellow-600">
-            <p className="text-yellow-300 font-semibold mb-3">{listenError}</p>
-            <p className="text-yellow-200 text-sm mb-3">Score yourself instead:</p>
+            {listenError && <p className="text-yellow-300 font-semibold mb-3">{listenError}</p>}
+            <p className="text-yellow-200 text-sm mb-3">Listen with 🔊, say it aloud, then score yourself:</p>
             <div className="flex gap-3">
               <button
                 onClick={() => { setAnswerResult("correct"); setHasResult(true); setScore(s => s + 1); }}
@@ -328,6 +393,16 @@ export function PronunciationMode({ onBackToMenu }: PronunciationModeProps) {
             Menu
           </button>
         </div>
+
+        {/* Always-available escape hatch when the mic won't cooperate */}
+        {supported && !hasResult && !isListening && !listenError && !showSelfScore && (
+          <button
+            onClick={() => setShowSelfScore(true)}
+            className="mt-3 w-full text-sm text-orange-300/80 hover:text-orange-100 underline"
+          >
+            Mic not cooperating? Score yourself instead
+          </button>
+        )}
       </div>
 
       <p className="text-center text-orange-400/50 text-xs mt-3">Press 🔊 to hear the correct pronunciation at any time</p>
