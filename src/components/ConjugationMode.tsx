@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { conjugations, ConjugationItem } from "../data/conjugations";
+import { conjugations, ConjugationItem, Tense } from "../data/conjugations";
 import { checkAnswer, AnswerResult } from "../utils/normalise";
 
 interface ConjugationModeProps {
@@ -14,6 +14,16 @@ function getPool(filter: TenseFilter): ConjugationItem[] {
   return filter === "present"
     ? conjugations.filter(c => c.tense === "present")
     : conjugations;
+}
+
+// Label shown to disambiguate which past tense is expected. Present is left
+// bare so the default present-only mode stays uncluttered.
+function tenseLabel(tense: Tense): string | null {
+  switch (tense) {
+    case "passe_compose": return "passé composé";
+    case "imparfait": return "imparfait";
+    default: return null;
+  }
 }
 
 function pickRandom(usedIds: Set<number>, pool: ConjugationItem[]): ConjugationItem | null {
@@ -178,9 +188,16 @@ export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
       </div>
 
       <div className="bg-gray-800 border-2 border-orange-600 rounded-xl shadow-2xl p-8">
-        <p className="text-orange-400 text-sm font-medium text-center mb-1 uppercase tracking-wide">
-          {currentItem.verbEnglish}
-        </p>
+        <div className="flex items-center justify-center gap-2 mb-1">
+          <p className="text-orange-400 text-sm font-medium uppercase tracking-wide">
+            {currentItem.verbEnglish}
+          </p>
+          {tenseLabel(currentItem.tense) && (
+            <span className="text-xs font-semibold text-orange-100 bg-orange-700/60 border border-orange-500 rounded-full px-2 py-0.5 lowercase tracking-normal">
+              {tenseLabel(currentItem.tense)}
+            </span>
+          )}
+        </div>
         <p className="text-white text-4xl font-bold text-center mb-8">
           {currentItem.english}
         </p>
