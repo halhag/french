@@ -8,8 +8,16 @@ interface ConjugationModeProps {
 
 const ROUNDS = 10;
 
-function pickRandom(usedIds: Set<number>): ConjugationItem | null {
-  const available = conjugations.filter(c => !usedIds.has(c.id));
+type TenseFilter = "present" | "all";
+
+function getPool(filter: TenseFilter): ConjugationItem[] {
+  return filter === "present"
+    ? conjugations.filter(c => c.tense === "present")
+    : conjugations;
+}
+
+function pickRandom(usedIds: Set<number>, pool: ConjugationItem[]): ConjugationItem | null {
+  const available = pool.filter(c => !usedIds.has(c.id));
   if (available.length === 0) return null;
   return available[Math.floor(Math.random() * available.length)];
 }
@@ -34,6 +42,7 @@ function getScoreMessage(score: number): string {
 export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
   const [round, setRound] = useState(1);
   const [score, setScore] = useState(0);
+  const [tenseFilter, setTenseFilter] = useState<TenseFilter>("present");
   const [currentItem, setCurrentItem] = useState<ConjugationItem | null>(null);
   const [usedIds, setUsedIds] = useState<Set<number>>(new Set());
   const [userInput, setUserInput] = useState("");
@@ -43,7 +52,7 @@ export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    loadNextItem(new Set());
+    loadNextItem(new Set(), tenseFilter);
   }, []);
 
   useEffect(() => {
@@ -52,10 +61,11 @@ export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
     }
   }, [currentItem, hasSubmitted]);
 
-  function loadNextItem(ids: Set<number>) {
-    const item = pickRandom(ids);
+  function loadNextItem(ids: Set<number>, filter: TenseFilter) {
+    const pool = getPool(filter);
+    const item = pickRandom(ids, pool);
     if (!item) {
-      const fresh = conjugations[Math.floor(Math.random() * conjugations.length)];
+      const fresh = pool[Math.floor(Math.random() * pool.length)];
       setCurrentItem(fresh);
       setUsedIds(new Set([fresh.id]));
     } else {
@@ -65,6 +75,15 @@ export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
     setUserInput("");
     setHasSubmitted(false);
     setAnswerResult("wrong");
+  }
+
+  function handleFilterChange(filter: TenseFilter) {
+    if (filter === tenseFilter) return;
+    setTenseFilter(filter);
+    setRound(1);
+    setScore(0);
+    setIsGameComplete(false);
+    loadNextItem(new Set(), filter);
   }
 
   function handleSubmit() {
@@ -87,7 +106,7 @@ export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
       setIsGameComplete(true);
     } else {
       setRound(r => r + 1);
-      loadNextItem(usedIds);
+      loadNextItem(usedIds, tenseFilter);
     }
   }
 
@@ -95,7 +114,7 @@ export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
     setRound(1);
     setScore(0);
     setIsGameComplete(false);
-    loadNextItem(new Set());
+    loadNextItem(new Set(), tenseFilter);
   }
 
   if (isGameComplete) {
@@ -132,6 +151,27 @@ export function ConjugationMode({ onBackToMenu }: ConjugationModeProps) {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <div className="bg-gray-800 border-2 border-orange-600 rounded-xl shadow-2xl p-2 mb-4 flex gap-2">
+        <button
+          onClick={() => handleFilterChange("present")}
+          className={`flex-1 font-semibold py-2 rounded-lg transition-colors ${
+            tenseFilter === "present"
+              ? "bg-orange-600 text-white shadow"
+              : "bg-gray-700 text-orange-200 hover:bg-gray-600"
+          }`}>
+          Present only
+        </button>
+        <button
+          onClick={() => handleFilterChange("all")}
+          className={`flex-1 font-semibold py-2 rounded-lg transition-colors ${
+            tenseFilter === "all"
+              ? "bg-orange-600 text-white shadow"
+              : "bg-gray-700 text-orange-200 hover:bg-gray-600"
+          }`}>
+          All tenses
+        </button>
+      </div>
+
       <div className="bg-gray-800 border-2 border-orange-600 rounded-xl shadow-2xl p-4 mb-4 flex justify-between items-center">
         <span className="text-orange-300 font-semibold">Round {round}/{ROUNDS}</span>
         <span className="text-orange-300 font-semibold">Score: {score}</span>
